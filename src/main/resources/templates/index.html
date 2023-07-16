@@ -55,10 +55,14 @@
 				</div>
 			</div>
 		</form>
-
+		<div th:if="${second == true}">
+			<div th:if="${result != null}" style="color: green;">Bạn ghi nhận to do thành công</div>
+			<div th:if="${result == null}" style="color: red;">Bạn ghi nhận to do thất bại</div>
+		</div>
+		
 		<h1 class="text-center mx-auto mt-5">Today' task</h1>
 		<!-- To do list -->
-		<div th:each="info : ${toDoList}" class="list-group">
+		<div th:each="info : ${listToDo}" class="list-group">
 			<div class="list-group-item">
 				<div class="">
 					<h5 class="mb-1" th:text="*{info.tieuDe}"></h5>
